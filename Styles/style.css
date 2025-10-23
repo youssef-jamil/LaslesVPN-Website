@@ -543,6 +543,7 @@ ol {
 .btn-get-started {
   background: var(--color-primary);
   color: var(--color-white);
+  /*   padding: var(--spacing-md) var(--spacing-4xl); */
   width: 25rem;
   height: 6rem;
   border-radius: var(--radius-lg);
@@ -1026,15 +1027,11 @@ ol {
 
 .btn-subscribe-now {
   background-color: var(--color-primary);
-  width: 25rem;
-  height: 6rem;
+  padding: var(--spacing-md) var(--spacing-3xl);
   color: var(--color-white);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   border-radius: var(--radius-md);
-  border: none;
-  -webkit-backdrop-filter: blur(5.4rem);
-          backdrop-filter: blur(5.4rem);
   box-shadow: var(--shadow-button);
   transition: var(--transition-normal);
   position: relative;
