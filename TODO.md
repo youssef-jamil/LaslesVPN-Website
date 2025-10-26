@@ -1,5 +1,29 @@
-# TODO: Improve Social Media Icons in Footer
+# Animation Implementation Plan
 
-- [x] Update icon sizes in index.html from 24px to 28px
-- [x] Modify footer social media styles in style.scss: increase container size to 60px, enhance hover effects
-- [x] Test the footer on different screen sizes (opened in browser)
+## Overview
+
+Add scroll-triggered animations to all sections using JavaScript's Intersection Observer API for a professional look.
+
+## Steps
+
+- [x] Add initial animation styles to CSS for fade-in and slide-up effects
+- [x] Refactor script.js to include animation logic
+- [ ] Apply animation classes to all sections in HTML
+- [x] Test animations on scroll
+
+## Sections to Animate
+
+- [x] Header
+- [ ] About
+- [ ] Icon (Stats)
+- [ ] Features
+- [ ] Pricing
+- [ ] Testimonials
+- [ ] Subscribe
+- [ ] Footer
+
+## Animation Details
+
+- Fade in with translateY(50px) to translateY(0)
+- Staggered delays for elements within sections
+- Intersection Observer with threshold 0.1

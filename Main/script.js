@@ -128,6 +128,31 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Scroll-triggered animations using Intersection Observer
+document.addEventListener("DOMContentLoaded", function () {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Add staggered delay for elements within sections
+        setTimeout(() => {
+          entry.target.classList.add("animate-in");
+        }, index * 100);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all sections and header/footer
+  const sections = document.querySelectorAll(".section, .header, .footer");
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+});
+
 // Add ripple effect styles
 const style = document.createElement("style");
 style.textContent = `
@@ -135,7 +160,7 @@ style.textContent = `
         position: relative;
         overflow: hidden;
     }
-    
+
     .ripple {
         position: absolute;
         border-radius: 50%;
@@ -144,7 +169,7 @@ style.textContent = `
         animation: ripple-animation 0.6s linear;
         pointer-events: none;
     }
-    
+
     @keyframes ripple-animation {
         to {
             transform: scale(4);
