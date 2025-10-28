@@ -1,110 +1,112 @@
 /* ===========================================
-   ANIMATION CLASSES
+   STRONG ANIMATION CLASSES
    =========================================== */
 .animate {
   opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  padding: 1.5rem 0;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.header.sticky {
-  opacity: 1;
-  transform: translateY(0);
-  padding: 1rem 0;
-  background-color: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.header.shrink {
-  padding: 0.5rem 0;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
-}
-
-.header .logo img {
-  transition: transform 0.3s ease;
-}
-
-.header.shrink .logo img {
-  transform: scale(0.9);
-}
-
-.header .nav-list .nav-item {
-  transition: all 0.3s ease;
-}
-
-.header.shrink .nav-list .nav-item {
-  font-size: 1.4rem;
-}
-
-.header .auth-buttons {
-  transition: all 0.3s ease;
-}
-
-.header.shrink .auth-buttons {
-  gap: 1rem;
-}
-
-.header.shrink .btn-signup {
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
+  transform: translateY(0) scale(1) !important;
+  animation-fill-mode: forwards;
 }
 
 .about {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(100px) scale(0.8);
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about.animate {
+  animation: slideUpScale 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .icon {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(80px) scale(0.9);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.icon.animate {
+  animation: slideUpScale 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
 }
 
 .features {
   opacity: 0;
-  transform: translateX(-50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateX(-100px) scale(0.9);
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.features.animate {
+  animation: slideRightScale 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
 }
 
 .pricing {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(100px) scale(0.8);
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pricing.animate {
+  animation: slideUpScale 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s both;
 }
 
 .testimonials {
   opacity: 0;
-  transform: translateX(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateX(100px) scale(0.9);
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.testimonials.animate {
+  animation: slideLeftScale 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s both;
 }
 
 .footer {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(80px) scale(0.9);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.footer.animate {
+  animation: slideUpScale 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
 }
 
 .subscribe {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(60px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.subscribe.animate {
+  animation: slideUpScale 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s both;
+}
+
+/* Keyframe Animations */
+@keyframes slideUpScale {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes slideRightScale {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes slideLeftScale {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
 }
 
 /*# sourceMappingURL=animations.css.map */
