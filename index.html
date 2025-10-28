@@ -22,29 +22,26 @@
 
 <body>
   <main class="container">
-    <header class="header animate-in">
+    <header class="header">
       <div class="logo">
         <img src="./Images/Logo.svg" alt="LaslesVPN Logo" width="35" height="24">
         <h3 class="heading-logo">Lasles<span class="span-heading-black">VPN</span></h3>
       </div>
 
       <!-- Mobile menu button -->
-      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle-checkbox"
+        aria-label="Toggle navigation menu">
+      <label for="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle navigation menu">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
-      </button>
+      </label>
+
+      <!-- Overlay for mobile menu -->
+      <div class="mobile-menu-overlay"></div>
 
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="mobile-menu-header">
-          <div class="logo">
-            <img src="./Images/Logo.svg" alt="LaslesVPN Logo" width="35" height="24">
-            <h3 class="heading-logo">Lasles<span class="span-heading-black">VPN</span></h3>
-          </div>
-          <button class="mobile-menu-close" aria-label="Close navigation menu">
-            <span class="close-line"></span>
-            <span class="close-line"></span>
-          </button>
         </div>
         <ul class="nav-list">
           <li class="nav-item"><a href="#about" aria-label="Go to About section">About</a></li>
@@ -54,8 +51,8 @@
           <li class="nav-item"><a href="#help" aria-label="Go to Help section">Help</a></li>
         </ul>
         <div class="mobile-auth-buttons">
-          <button class="btn-signin" aria-label="Sign in to your account">Sign In</button>
-          <button class="btn-signup" aria-label="Create a new account">Sign Up</button>
+          <button class="btn-signin-mobile" aria-label="Sign in to your account">Sign In</button>
+          <button class="btn-signup-mobile" aria-label="Create a new account">Sign Up</button>
         </div>
       </nav>
 
@@ -412,8 +409,8 @@
       </div>
     </div>
   </footer>
-
   <script src="./Main/script.js"></script>
+
 </body>
 
 </html>
